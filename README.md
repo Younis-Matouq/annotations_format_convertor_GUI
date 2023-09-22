@@ -60,6 +60,11 @@ To start using the `annotations_format_convertor_GUI`, run the following command
       - **No Smoothness**: Retains full detail of the polygon.
       - **Fully Smoothed**: Applies maximum smoothening, resulting in fewer polygonal details.
       - **Simple Smoothness**: A balanced option that moderately smoothens the polygon.
+      
+    - Check the output of each smoothness level: 
+<p float="left" align="center">
+  <img src="./smoothness_images_example/output.png" width="850" />
+</p>
 
 7. **Execution**:
     - Once all the parameters are specified, simply click the "Run" button to initiate the conversion process.
