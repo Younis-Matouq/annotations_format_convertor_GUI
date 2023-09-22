@@ -1,4 +1,4 @@
-# `annotations_format_convertor_GUI` Documentation
+# `annotations_format_convertor_GUI Documentation:` 
 
 ---
 
@@ -7,11 +7,23 @@
 The `annotations_format_convertor_GUI` is a user-friendly graphical interface designed to simplify the conversion of YOLO annotation formats between text and JSON representations. The tool accommodates both rectangular and segmentation annotation types.
 ## Installation
 
-Before using the `annotations_format_convertor_GUI`, you must install the required libraries. Navigate to the project's root directory in your terminal or command prompt and run the following command:
+To start using the `annotations_format_convertor_GUI`, run the following commands:
 
-```bash
-pip install -r requirements.txt
-```
+1. **Clone the Repository Locally**:
+   ```shell
+    git clone https://github.com/Younis-Matouq/annotations_format_convertor_GUI.git
+    ```
+
+2. **Navigate to the Project Directory and Install the required Python packages using `pip`**:
+
+    ```shell
+    cd annotations_format_convertor_GUI
+    ```
+
+   ```shell
+    pip install -r requirements.txt
+    ```
+
 ## Functionalities:
 
 1. **rect_convert_json_to_txt**: Convert rectangular annotations from JSON to text format.
