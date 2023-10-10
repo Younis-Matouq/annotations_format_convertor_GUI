@@ -107,15 +107,15 @@ def write_json(save_path,file_name,data_example):
         outfile.write(json.dumps(data_example,indent=2)) 
             
             
-def json_file_data_format(img_path):
+def json_file_data_format(img_path,imageWidth=1920,imageHeight=780):
     """This function returns a dictionary in Labelme standard format."""
     image_name= Path(img_path).stem
 
     return {"version": "5.1.1", "flags": {},  "shapes":[],
               "imagePath": image_name+'.png',
               "imageData": None,
-              "imageHeight": 780,
-              "imageWidth": 1920 }, image_name
+              "imageHeight":int(imageHeight) ,
+              "imageWidth": int(imageWidth) }, image_name
 
 
 
@@ -145,7 +145,7 @@ def yolo_to_json_polygon_writer(text_dir,save_path,class_dic, smoothness_degree=
             data=pd.read_csv(txt, delimiter='\t', header=None)
             polygons=[]
             labels=[]
-            data_example, image_name= json_file_data_format(img_path=txt) 
+            data_example, image_name= json_file_data_format(img_path=txt,imageWidth=imageWidth,imageHeight=imageHeight) 
 
             polygons=[]
             labels=[]
