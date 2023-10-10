@@ -70,7 +70,7 @@ smoothness_level={'No Smoothness':no_smoothness,
                   'Simple Smoothness':simple_smooth}
 
 
-def polygon_coordinates(polygon,smoothness_degree='No Smoothness',imageWidth=1920,imageHeight=780):
+def polygon_coordinates(polygon,imageWidth,imageHeight,smoothness_degree='No Smoothness'):
     '''This function takes YOLO polygon coordinates and generates a smoother version of the same polygon.
         Parameters:
                polygon: 2D numpy array of the polygon coordinates.
@@ -92,7 +92,7 @@ def polygon_coordinates(polygon,smoothness_degree='No Smoothness',imageWidth=192
     
     else:     
         smoothness_process=smoothness_level[smoothness_degree]
-        polygon=smoothness_process(polygon,imageWidth=1920,imageHeight=780)
+        polygon=smoothness_process(polygon,imageWidth=imageWidth,imageHeight=imageHeight)
         return polygon
     
     
@@ -107,7 +107,7 @@ def write_json(save_path,file_name,data_example):
         outfile.write(json.dumps(data_example,indent=2)) 
             
             
-def json_file_data_format(img_path,imageWidth=1920,imageHeight=780):
+def json_file_data_format(img_path,imageWidth,imageHeight):
     """This function returns a dictionary in Labelme standard format."""
     image_name= Path(img_path).stem
 
@@ -119,7 +119,7 @@ def json_file_data_format(img_path,imageWidth=1920,imageHeight=780):
 
 
 
-def yolo_to_json_polygon_writer(text_dir,save_path,class_dic, smoothness_degree='No Smoothness', imageWidth=1920,imageHeight=780):
+def yolo_to_json_polygon_writer(text_dir,save_path,class_dic, imageWidth,imageHeight,smoothness_degree='No Smoothness'):
     """When called, this function creates a JSON file with polygon annotations.
             Parameters:
                 text_dir: a directory containing YOLO polygon annotations.

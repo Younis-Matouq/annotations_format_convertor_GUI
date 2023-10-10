@@ -125,7 +125,7 @@ class ScriptRunnerApp(QWidget):
             img_width = self.img_width_spin.value()
             img_height = self.img_height_spin.value()
             smoothness_degree = self.smoothness_selector.currentText()
-            seg_convert_txt_to_json.yolo_to_json_polygon_writer(input_dir_path, output_dir_path, class_dict_path, smoothness_degree,img_width, img_height)
+            seg_convert_txt_to_json.yolo_to_json_polygon_writer(input_dir_path, output_dir_path, class_dict_path,img_width, img_height,smoothness_degree)
         elif choice == 2: #rect_convert_json_to_txt
              rect_convert_json_to_txt.json_to_yolo_rect(input_dir_path, output_dir_path, class_dict_path)  # Using the same args as script1
         else: #rect_convert_txt_to_json
